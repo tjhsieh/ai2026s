@@ -1,45 +1,40 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
 <head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- D3, jquery -->
-<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script>
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script>
 
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 
-<title>作業五</title>
-<!-- https://alexlenail.me/NN-SVG/about.html -->
-<link rel="icon" href="../hw00/favicon.svg"/>
-<style type="text/css">
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+  <title>作業五</title>
+  <link rel="icon" href="../hw00/favicon.svg"/>
+  
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
 
-  @font-face {
-    font-family:'CircleFont';
-    src: url(https://circle472.github.io/ct2022s/hw04/CircleFont_v2.woff2); 
-  }
+    @font-face {
+      font-family:'CircleFont';
+      src: url(https://circle472.github.io/ct2022s/hw04/CircleFont_v2.woff2);   
+    }
 
-  table {
+    table {
       border-collapse: collapse;
       border: 2px solid white; /* rgba(217,140,144,1) */
-      font-size:  16pt;
+      font-size: 16pt;
       margin-left: auto;
       margin-right: auto;
-  }
+    }
 
-  td,
-  th {
+    td, th {
       border: 1px solid white;
       padding: 2px 8px;
-  }
+    }
 
-  .flipswitch
-  {
+    .flipswitch {
       position: relative;
       background: white;
       width: 120px;
@@ -53,9 +48,9 @@
       font-weight: bold;
       cursor:pointer;
       border:1px solid #ddd;
-  }
-  .flipswitch:after
-  {
+    }
+
+    .flipswitch:after {
       position:absolute;
       top:5%;
       display:block; 
@@ -69,70 +64,69 @@
       color:rgba(159,53,58,1);
       border:#888 1px solid;
       border-radius:3px;
-  }
-  .flipswitch:after
-  {
+    }
+
+    .flipswitch:after {
       left:2%;
       content: "未完成";
-  }
-  .flipswitch:checked:after
-  {
+    }
+
+    .flipswitch:checked:after {
       left:53%;
       content: "完成";
-  }
+    }
 
-  body {
-    background-color: rgb(106, 76, 156); /* #6A4C9C */
-    color: rgb(106, 76, 156);
-    font-family: 'CircleFont', 'Noto Sans JP', serif;
-  }
+    body {
+      background-color: rgb(106, 76, 156); /* #6A4C9C */
+      color: rgb(106, 76, 156);
+      font-family: 'CircleFont', 'Noto Sans JP', serif;
+    }
 
-  .container-fluid {
-    width:  90%;
-  }
+    .container-fluid {
+      width: 90%;
+    }
 
-  .hw12 {
-    border: 1px solid rgb(159, 53, 58);
-    margin-top: 8px;
-    margin-bottom: 8px;
-  }
+    .hw12 {
+      border: 1px solid rgb(159, 53, 58);
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
 
-  .twenty {
-    border: 1px solid #f9eced;
-    color: #f9eced;
-    padding: 8px;
-    font-size: 18pt;
-  }
+    .twenty {
+      border: 1px solid #f9eced;
+      color: #f9eced;
+      padding: 8px;
+      font-size: 18pt;
+    }
 
-  .twenty a {
-    color:  yellow;
-  }
+    .twenty a {
+      color: yellow;
+    }
 
-  .twenty a:hover {
-    color: #f9eced;
-    font-size:  16pt;
-  }
+    .twenty a:hover {
+      color: #f9eced;
+      font-size: 16pt;
+    }
 
-  .twenty:hover {
+    .twenty:hover {
       box-shadow: 0 0 5px 3px #f9eced;
       color: cyan; 
       text-shadow: 0 0 6px #FFFFFF, 0 0 6px #000000;
-  }
+    }
 
-  .toprow {
-    margin-top: 36px;
-  }
+    .toprow {
+      margin-top: 36px;
+    }
 
-  .bottomrow {
-    margin-bottom: 36px;
-  }
-</style>
+    .bottomrow {
+      margin-bottom: 36px;
+    }
+  </style>
 </head>
 <body>
 
 <div class="container-fluid">
-
-  <!-- ---------------------------------------------- -->
+  
   <div class="row hw12 toprow">
     <div class="col twenty"><a href="../hw00/index.html">00</a></div>
     <div class="col twenty"><a href="../hw01/index.html">01</a></div>
@@ -143,21 +137,20 @@
     <div class="col twenty"><a href="../hw06/index.html">06</a></div>
   </div>
 
-  <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
       <h1>作業 05</h1>
     </div>
   </div>
 
-  <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+      本次作業是接觸文生圖的初步應用，使用的是目前提供個人使用功能最齊全的文生圖工具ComfyUI，
+      透過節點式的方式連接模塊，構建工作流並執行產生圖象，過程有趣且也能透過該過程理解模型運作
+      流程，最後根據主題成功生成芙莉蓮的相關圖像。
     </div>
   </div>
 
-  <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
       <table>
@@ -169,43 +162,81 @@
         </tr>
         <tr>
           <td rowspan="4" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
           <td id='m1'>4</td>
-          <td>Simple baseline - 描述</td>
+          <td>Simple baseline - 完成ComfyUI建置</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox2"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
           <td id='m2'>4</td>
-          <td>Medium baseline - 描述</td>
+          <td>Medium baseline - 完成芙莉蓮文生圖</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked></td>
           <td id='m3'>2</td>
-          <td>Strong baseline - 描述</td>
+          <td>Strong baseline - 替換模型完成辛梅爾文生圖</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4"></td>
           <td id='m4'>-10</td>
           <td>沒有寫100字心得</td>
         </tr>
-
       </table>
     </div>
   </div>
 
-  <!-- ------------------------------------------------>
-  <div class="row hw12 bottomrow">
-    <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
+  <div class="row hw12">
+    <div class="col-md-12 twenty" style="background-color:#00AC48;">
+      <figure>
+        <figcaption>ComfyUI+工作流</figcaption>
+        <img src="./process1.png" width="100%"/>
+      </figure>
     </div>
   </div>
 
-  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty" style="background-color:#ff0000;">
+      <figure>
+        <figcaption>First to images</figcaption>
+        <a href="https://civitai.com/models/1188071/animagine-xl-40?modelVersionId=1408658">Checkpoint連結</a>
+        <p>1344 * 768</p>
+        <p>masterpiece, best quality, high score, great score, absurdres, illustration, pointy ears, 1girl, solo, frieren, sousou no frieren, long hair, loli, flower, head wreath, smile, petals, earrings, jewelry, shirt, elf, blue flower, outdoors, green eyes, upper body, long sleeves, striped shirt, striped, shy, solo focus, closed mouth, white hair, falling petals, glowing, <lora:mix-a4-v2:1>
+        </p>
+        <p>lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer digits, cropped, worst quality, low quality, low score, bad score, average score, signature, watermark, username, blurry
+        </p>
+        <img src="./output2.png" width="100%"/>
+      </figure>
+    </div>
+  </div>
 
-  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty" style="background-color:#7030a0;">
+      <figure>
+        <figcaption>generation of Himmel</figcaption>
+        <a href="https://civitai.com/models/1188071/animagine-xl-40?modelVersionId=1408658">Checkpoint連結</a>
+        <br>
+        <a href="https://civitai.com/models/1209474/test-lora?modelVersionId=1373925">LoRA連結1</a>
+        <br>
+        <p>1344 * 768</p>
+        <p>masterpiece, best quality, high score, great score, absurdres, illustration, 1boy, solo, himmel \(sousou no frieren\), blue hair, short hair, blue eyes, cloak, white cape, armor, look at viewer, male focus, <lora:mix-a4-v2:1>
+        </p>
+        <p>lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer digits, cropped, worst quality, low quality, low score, bad score, average score, signature, watermark, username, blurry
+        </p>
+        <img src="./output1.png" width="100%"/>
+      </figure>
+    </div>
+  </div>
 
+  <div class="row hw12 bottomrow">
+    <div class="col-md-12 twenty" style="background-color:#1e517b;">
+      <h2>Reflection (心得)</h2>
+      <p>
+        Completing this text-to-image assignment on my local Windows setup using an AMD graphics card was an incredible learning experience. Because the initial course materials and Jupyter notebook templates were optimized for cloud servers running Linux and NVIDIA's proprietary CUDA framework, running the cells locally generated path and syntax errors. To bypass this, I shifted completely to the standalone ComfyUI portable package built specifically for AMD GPUs running on the DirectML backend. This hands-on workaround taught me how to manually structure an AI workflow by downloading the Obsession checkpoint and style-specific LoRAs directly into my local directories. Recreating the node paths visually, tuning the prompt fields to transition from Frieren to Himmel, and watching my AMD hardware successfully calculate the latent iterations local-side was highly rewarding. It proved that deep learning tasks can be highly flexible, robust, and functional across diverse hardware ecosystems.
+      </p>
+    </div>
+  </div>
+
+</div>
 
 <script>
   $(function() {
@@ -219,37 +250,26 @@
   d3.select("#myCheckbox2").on("change",update);
   d3.select("#myCheckbox3").on("change",update);
   d3.select("#myCheckbox4").on("change",update);
-  // d3.select("#myCheckbox5").on("change",update);
-  // d3.select("#myCheckbox6").on("change",update);
-  // d3.select("#myCheckbox7").on("change",update);
 
   update();
-  
+
   function update(){
-
     var score = 0;
-
     if (d3.select("#myCheckbox1").property("checked")){
       score += parseInt(d3.select('#m1').html());
     }
-
     if (d3.select("#myCheckbox2").property("checked")){
       score += parseInt(d3.select('#m2').html());   
     }
-
     if (d3.select("#myCheckbox3").property("checked")){
       score += parseInt(d3.select('#m3').html());   
     }
-
     if (d3.select("#myCheckbox4").property("checked")){
       score += parseInt(d3.select('#m4').html());   
     }
 
-
-    d3.select("#myTotal").html(score);    
+    d3.select("#myTotal").html(score);
   }
 </script>
-
 </body>
 </html>
-
